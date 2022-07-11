@@ -1,4 +1,6 @@
-
+/*
+	Author: webthemez.com 
+*/ 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,400italic,500italic);
  
 /* Global styles
@@ -19,7 +21,7 @@ body{
 	padding: 0;
 	color: #333333;
 	font-size: 14px;
-	background: #070A11;
+	background: #0c0c0c;
 }
 
 
@@ -142,7 +144,7 @@ h2.heading-title{
 }
 .text {
   font-weight: 100;
-  font-size: 42px;
+  font-size: 45px;
   color: #911E42;
 }
 .dud {
@@ -233,7 +235,7 @@ h2.title span{
 	background: #800080;
 	border: 0px;
 	border-radius: 0px;
-	border-top: 2px solid #fff;
+
 }
 .navbar-nav {}
 .navbar-nav li{
@@ -385,100 +387,6 @@ h2.title span{
 }
 
 
-/*section-resume
-==========================================*/
-
-#section-resume{
-	background: #f2f2f1;
-	position: relative;
-}
-#section-resume:after{
-	position: absolute;
-	content:"";
-	width: 60px;
-	height: 60px;
-	background: #f2f2f1;
-	bottom: -25px;
-	left: 48%;
-	border-radius: 50%;
-}
-
-.resume-inner{}
-.resume-inner{
-	width: 95%;
-}
-.resume-desc{
-	margin-top: -12px;
-}
-.resume-box{
-	margin-bottom: 80px;
-}
-.resume-title{
-
-}
-.resume-box.last{
-	margin-bottom: 0px;
-}
-.resume-sub{
-	margin:-3px 0px 12px;
-}
-.result,.year{
-	background: #09C3E7;
-	color: #fff;
-	padding: 9px 12px;
-	display: inline-block;
-	font-weight: 500;
-	margin-bottom: 10px;
-}
-.result{
-	text-transform: uppercase;
-}
-.year{
-	text-transform: capitalize;
-}
-
-
-
-
-/*Section-testimonial 
-==================================================*/
-#section-testimonial{
-	background: #f2f2f1;
-	padding-bottom: 105px;
-}
-.carousel-indicators li {
-    display: inline-block;
-    width: 11px;
-    height: 11px;
-}
-.carousel-indicators {
-    bottom: -25px;
-}
-.carousel-indicators .active {
-    background-color: #09C3E7;
-}
-.carousel-indicators li {
-    border-color: #09C3E7;
-}
-
-
-#testimonial-carousel{
-	width: 63%;
-	margin: 0 auto;
-	margin-top: -10px;
-}
-#testimonial-carousel p{
-	color: #77787B;
-	font-style: italic;
-	margin-bottom: 40px;
-	font-size: 15px;
-}
-
-.client-name{
-	color: #566366;
-	text-transform: uppercase;
-	margin-bottom: 50px;
-}
 
 
 /*====================================================
@@ -514,69 +422,6 @@ h2.title span{
 }
 .portfolio-box:hover .image-overlay{
 	opacity: 1;
-}
-
-
-/*SECTION contact
-=================================================*/
-
-#section-contact{
-	background: #002037;
-}
-#section-contact .heading-title{
-	color: #fff;
-}
-.contact-left{
-	padding-top: 30px;
-}
-.contact-left p{
-	color: #A1B9CA;
-	font-size: 16px;
-	line-height: 30px;
-}
-
-.contact-left h2{
-	color: #fff;
-}
-.location{
-	margin: 45px 0px;
-}
-.contact-left ul{
-	margin-left: -40px;
-}
-.contact-left ul li a{
-	color: #08C2E6;
-	margin-left: 40px;
-}
-.contact-left ul li span{
-	color: #fff;
-	
-}
-
-.contact-box{
-	margin-bottom: 40px;
-}
-.contact-box .form-group{
-	margin-bottom: 39px;
-}
-.contact-box label{
-	color: #09C3E7;
-	margin-bottom: 20px;
-	font-size: 18px;
-}
-
-.contact-box .form-control{
-	height: 50px;
-	border-radius: 0px;
-	background: #002037;
-	border: 0px;
-	border: 1px solid #09C3E7;
-	color: #B9D0E1;
-}
-.contact-form .btn-default{
-	
-	background: #09C3E7;
-	border: 0px;
 }
 
 
@@ -860,11 +705,11 @@ float: left;
 	============================================================*/
 
 	#section-footer{
-		background: #002037;
+
 		padding: 50px 0px;
 	}
 	#section-footer h4{
-		color: #0E788D;
+		color: #bb0000;
 		margin-top: 30px;
 	}
 
