@@ -1,8 +1,7 @@
-/*
-	Author: webthemez.com 
-*/ 
+
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,400italic,500italic);
- 
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
+
 /* Global styles
 ================================================== */
 
@@ -206,6 +205,7 @@ h2.title span{
 /*==================================================
 	navbar-menu
 =====================================================*/
+
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
   background-color: #002037;
 }
@@ -244,8 +244,7 @@ h2.title span{
 .navbar-default .navbar-nav > li > a{
 	font-weight: 400;
 	padding: 30px 20px;
-	font-size: 15px;
-	font-family: 'Roboto', serif;
+	font-family: 'Dhurjati', sans-serif;
 	color: #fff;
 	line-height: 30px;
 	text-transform: uppercase;
