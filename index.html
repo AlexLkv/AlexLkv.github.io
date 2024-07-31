@@ -50,7 +50,7 @@
     <script>
         async function fetchData() {
             try {
-                const url = 'http://lk.abitur.mtuci.ru/list/spisok.php?levelTarget=bak_main&originalView=all&group=09.03.01+Искусственный+интеллект+и+машинное+обучение+%28Бюджет%2C+Очная%29+%282024%29&originalFilter=&topPriority=&search_type=snils&valueSearch=&originalView=rating';
+                const url = 'https://api.allorigins.win/raw?url=' + encodeURIComponent('http://lk.abitur.mtuci.ru/list/spisok.php?levelTarget=bak_main&originalView=all&group=09.03.01+Искусственный+интеллект+и+машинное+обучение+%28Бюджет%2C+Очная%29+%282024%29&originalFilter=&topPriority=&search_type=snils&valueSearch=&originalView=rating');
                 const response = await fetch(url);
                 const text = await response.text();
                 const parser = new DOMParser();
