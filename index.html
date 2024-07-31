@@ -47,48 +47,49 @@
             background-color: #ddd;
         }
     </style>
-    <script>
-        async function fetchData() {
-            try {
-                const url = 'https://lk.abitur.mtuci.ru/list/spisok.php?levelTarget=bak_main&originalView=all&group=09.03.01+Искусственный+интеллект+и+машинное+обучение+%28Бюджет%2C+Очная%29+%282024%29&originalFilter=&topPriority=&search_type=snils&valueSearch=&originalView=rating';
-                const response = await fetch(url);
-                const text = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                const targetText = '193-037-041 53';  // Text to search
-                const elements = Array.from(doc.querySelectorAll('*'))
-                    .filter(el => el.textContent.includes(targetText));
+   <script>
+    async function fetchData() {
+        try {
+            const url = 'https://cors-anywhere.herokuapp.com/http://lk.abitur.mtuci.ru/list/spisok.php?levelTarget=bak_main&originalView=all&group=09.03.01+Искусственный+интеллект+и+машинное+обучение+%28Бюджет%2C+Очная%29+%282024%29&originalFilter=&topPriority=&search_type=snils&valueSearch=&originalView=rating';
+            const response = await fetch(url);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const targetText = '193-037-041 53';  // Text to search
+            const elements = Array.from(doc.querySelectorAll('*'))
+                .filter(el => el.textContent.includes(targetText));
 
-                let message = "Не удалось найти ваше место в рейтинге.";
-                let count = "";
+            let message = "Не удалось найти ваше место в рейтинге.";
+            let count = "";
 
-                if (elements.length > 0) {
-                    elements.forEach(element => {
-                        const parent = element.parentElement;
-                        if (parent) {
-                            const previousSibling = parent.previousElementSibling;
-                            if (previousSibling) {
-                                count = previousSibling.textContent.trim();
-                                message = `Ваше актуальное место в рейтинге: ${count}`;
-                            }
+            if (elements.length > 0) {
+                elements.forEach(element => {
+                    const parent = element.parentElement;
+                    if (parent) {
+                        const previousSibling = parent.previousElementSibling;
+                        if (previousSibling) {
+                            count = previousSibling.textContent.trim();
+                            message = `Ваше актуальное место в рейтинге: ${count}`;
                         }
-                    });
-                }
-
-                document.getElementById('message').textContent = message;
-                document.getElementById('lastUpdate').textContent = 'Последнее обновление: ' + new Date().toLocaleString();
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                document.getElementById('message').textContent = "Произошла ошибка при загрузке данных.";
-                document.getElementById('lastUpdate').textContent = '';
+                    }
+                });
             }
+
+            document.getElementById('message').textContent = message;
+            document.getElementById('lastUpdate').textContent = 'Последнее обновление: ' + new Date().toLocaleString();
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            document.getElementById('message').textContent = "Произошла ошибка при загрузке данных.";
+            document.getElementById('lastUpdate').textContent = '';
         }
+    }
 
-        // Refresh data every 10 minutes
-        setInterval(fetchData, 600000);
+    // Refresh data every 10 minutes
+    setInterval(fetchData, 600000);
 
-        window.onload = fetchData;
-    </script>
+    window.onload = fetchData;
+</script>
+
 </head>
 <body>
     <div class="container">
