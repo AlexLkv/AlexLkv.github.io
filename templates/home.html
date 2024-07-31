@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container p {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .container small {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.8em;
+            color: #888;
+        }
+        button {
+            margin-top: 20px;
+            font-size: 1em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: white;
+            color: #333;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #ddd;
+        }
+    </style>
+    <script>
+        // Function to refresh the page every 10 minutes
+        function autoRefresh() {
+            setTimeout(() => {
+                location.reload();
+            }, 600000); // 600000 ms = 10 minutes
+        }
+
+        // Call the function on page load
+        window.onload = autoRefresh;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <p>{{ number }}</p>
+        <small>Последнее обновление: {{ last_update }}</small>
+        <button onclick="location.reload()">Обновить</button>
+    </div>
+</body>
+</html>
