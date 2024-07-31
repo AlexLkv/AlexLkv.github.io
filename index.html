@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Tracker</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container p {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .container small {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.8em;
+            color: #888;
+        }
+        button {
+            margin-top: 20px;
+            font-size: 1em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: white;
+            color: #333;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #ddd;
+        }
+    </style>
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('/api/data');
+                const data = await response.json();
+                document.getElementById('message').textContent = data.message;
+                document.getElementById('lastUpdate').textContent = 'Последнее обновление: ' + data.last_update;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        // Refresh data every 10 minutes
+        setInterval(fetchData, 600000);
+
+        window.onload = fetchData;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <p id="message">Loading...</p>
+        <small id="lastUpdate"></small>
+        <button onclick="fetchData()">Обновить</button>
+    </div>
+</body>
+</html>
